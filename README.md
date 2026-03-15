@@ -1,12 +1,9 @@
 <div align="center">
 
-<!-- Dynamic Header Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=220&section=header&text=Ubair%20Mustafa&fontSize=52&fontColor=ffffff&fontAlignY=35&desc=AI%20and%20Software%20Engineer%20%7C%20Building%20Intelligent%20Systems&descSize=18&descAlignY=55&animation=fadeIn" width="100%" />
 
-<!-- Typing Animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=850&height=100&lines=Full-Stack+Engineer+%7C+AI+Integration+Specialist;Building+LLM-Powered+Applications+%26+Security+Tools;Electron+%7C+Next.js+%7C+Flask+%7C+Real-Time+Systems)](https://git.io/typing-svg)
 
-<!-- Social Badges -->
 <p>
   <a href="https://linkedin.com/in/mustafaubair"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="mailto:mustafaubair@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
@@ -173,7 +170,6 @@ A full-stack educational platform that **gamifies cybersecurity concepts** with 
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ubairrr&theme=github-dark-blue&hide_border=true&background=0d1117&stroke=1f6feb&ring=1f6feb&fire=ff6e40&currStreakLabel=58a6ff&sideLabels=58a6ff&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" width="49%" />
 </div>
 
-<!-- Contribution Graph -->
 <br/>
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=ubairrr&theme=github-compact&hide_border=true&bg_color=0d1117&color=58a6ff&line=1f6feb&point=ff6e40&area=true&area_color=1f6feb" width="98%" />
 
@@ -229,46 +225,6 @@ CGPA: **7.5** (Currently Pursuing)
   </picture>
 </div>
 
-> 💡 *To enable the snake animation, add the [snk](https://github.com/Platane/snk) GitHub Action to your profile repo. See setup instructions below.*
-
-<details>
-<summary>📋 Snake Animation Setup (GitHub Actions)</summary>
-
-Create `.github/workflows/snake.yml` in your `ubairrr/ubairrr` profile repo:
-
-```yaml
-name: Generate Snake Animation
-
-on:
-  schedule:
-    - cron: "0 */12 * * *" # Runs every 12 hours
-  workflow_dispatch:
-
-# Add necessary permissions for pushing to the output branch
-permissions:
-  contents: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ubairrr
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            
-      - uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-</details>
-
 ---
 
 ## 📫 Let's Connect
@@ -301,5 +257,4 @@ jobs:
 
 </div>
 
-<!-- Wave Footer -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=120&section=footer" width="100%" />
