@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Dynamic Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=220&section=header&text=Ubair%20Mustafa&fontSize=52&fontColor=ffffff&fontAlignY=35&desc=AI%20%26%20Software%20Engineer%20%7C%20Building%20Intelligent%20Systems&descSize=18&descAlignY=55&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=220&section=header&text=Ubair%20Mustafa&fontSize=52&fontColor=ffffff&fontAlignY=35&desc=AI%20and%20Software%20Engineer%20%7C%20Building%20Intelligent%20Systems&descSize=18&descAlignY=55&animation=fadeIn" width="100%" />
 
 <!-- Typing Animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=650&height=100&lines=Full-Stack+Engineer+%7C+AI+Integration+Specialist;Building+LLM-Powered+Applications+%26+Security+Tools;Electron+%7C+Next.js+%7C+Flask+%7C+Real-Time+Systems)](https://git.io/typing-svg)
