@@ -5,7 +5,7 @@
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=850&height=100&lines=Full-Stack+Engineer+%7C+AI+Integration+Specialist;Building+LLM-Powered+Applications+%26+Security+Tools;Electron+%7C+Next.js+%7C+Flask+%7C+Real-Time+Systems)](https://git.io/typing-svg)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mustafaubair)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mustafaubair@gmail.com)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&to=mustafaubair@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ubairrr)
 ![Profile Views](https://komarev.com/ghpvc/?username=ubairrr&style=for-the-badge&color=1f6feb&label=PROFILE+VIEWS)
 
@@ -231,7 +231,7 @@ CGPA: **7.5** (Currently Pursuing)
 
 | Platform | Link |
 |:--------:|:----:|
-| 📧 **Email** | [mustafaubair@gmail.com](mailto:mustafaubair@gmail.com) |
+| 📧 **Email** | [mustafaubair@gmail.com](https://mail.google.com/mail/?view=cm&to=mustafaubair@gmail.com) |
 | 💼 **LinkedIn** | [linkedin.com/in/mustafaubair](https://linkedin.com/in/mustafaubair) |
 | 🐙 **GitHub** | [github.com/ubairrr](https://github.com/ubairrr) |
 | 📍 **Location** | Delhi, India |
@@ -247,7 +247,7 @@ CGPA: **7.5** (Currently Pursuing)
 *I'm actively seeking **internship opportunities** in backend engineering, AI/ML integration, and full-stack development.*  
 *If you're building something ambitious — let's talk.*
 
-**📩 Reach out at [mustafaubair@gmail.com](mailto:mustafaubair@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/mustafaubair)**
+**📩 Reach out at [mustafaubair@gmail.com](https://mail.google.com/mail/?view=cm&to=mustafaubair@gmail.com) or connect on [LinkedIn](https://linkedin.com/in/mustafaubair)**
 
 ---
 
