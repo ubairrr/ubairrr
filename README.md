@@ -244,6 +244,10 @@ on:
     - cron: "0 */12 * * *" # Runs every 12 hours
   workflow_dispatch:
 
+# Add necessary permissions for pushing to the output branch
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -254,7 +258,8 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
+            
+      - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
