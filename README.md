@@ -30,6 +30,8 @@
 <div align="center">
 
 ### Languages
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -71,6 +73,26 @@
 <tr>
 <td width="50%">
 
+### 📸 [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3)
+> **C++ · LVGL v8.3 · PlatformIO · ESPAsyncWebServer**
+
+A feature-rich, standalone touchscreen photo booth built entirely on an ESP32-S3 microcontroller, featuring a real-time viewfinder, custom pixel filters, and an embedded WiFi photo-sharing web app.
+
+**🔥 Key Highlights:**
+- **Dual-Core Architecture**: Runs the PSRAM-double-buffered video pipeline (25 FPS) on Core 0, leaving Core 1 dedicated to smooth LVGL UI rendering.
+- **Custom Image Processing**: Implemented 8 real-time pixel-level RGB565 filters using integer-only arithmetic, alongside a custom 24-bit BMP encoder/decoder.
+- **Embedded Web Gallery**: Built an async HTTP server hosting a responsive, zero-dependency, dark-mode SPA for downloading/deleting photos via a local WiFi AP.
+- **Boot Animation Engine**: Decodes MJPEG frames directly from flash memory using the JPEGDEC library before initialising the UI framework.
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/ubairrr/PhotoBooth_ESP32-S3?style=social" />
+  <img src="https://img.shields.io/github/forks/ubairrr/PhotoBooth_ESP32-S3?style=social" />
+  <img src="https://img.shields.io/badge/platform-ESP32--S3-orange?logo=espressif" />
+</p>
+
+</td>
+<td width="50%">
+
 ### 🕵️ [Real-Time AI Desktop Overlay](https://github.com/ubairrr/interview-helper)
 > **Electron · React 19 · Deepgram Nova-2 · NVIDIA Llama Vision**
 
@@ -89,6 +111,9 @@ An advanced macOS desktop application featuring **dual audio pipelines** for rea
 </p>
 
 </td>
+</tr>
+
+<tr>
 <td width="50%">
 
 ### ✨ [AI Prompt Studio](https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator)
@@ -109,9 +134,6 @@ A web-based prompt optimization engine that converts raw ideas into **master-lev
 </p>
 
 </td>
-</tr>
-
-<tr>
 <td width="50%">
 
 ### 🔐 [TOTP Generator — RFC 6238](https://github.com/ubairrr/Ubair-s_TOTP_Gen)
@@ -132,6 +154,9 @@ A customizable TOTP authentication tool implementing **SHA-1, SHA-256, and SHA-5
 </p>
 
 </td>
+</tr>
+
+<tr>
 <td width="50%">
 
 ### 🎮 [HACKED — Cybersecurity Game](https://github.com/ubairrr/HACKED-GAME)
@@ -150,6 +175,9 @@ A full-stack educational platform that **gamifies cybersecurity concepts** with 
   <img src="https://img.shields.io/github/forks/ubairrr/HACKED-GAME?style=social" />
   <img src="https://img.shields.io/badge/users-100%2B-blue" />
 </p>
+
+</td>
+<td width="50%">
 
 </td>
 </tr>
