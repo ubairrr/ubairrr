@@ -15,7 +15,7 @@
 
 ## 🧑‍💻 About Me
 
-> *I'm an engineering student who builds **production-grade software across the entire stack** — from hand-tuned C++ firmware running on dual-core microcontrollers, to real-time AI desktop applications streaming audio over WebSockets, to full-stack web platforms that have served live events with 100+ concurrent users. I implement things from first principles: my TOTP authenticator is built from raw HMAC primitives (no crypto libraries) and **passes every official RFC 6238 test vector**, and my photo booth renders 25 FPS video with custom integer-only image filters on a chip with no GPU.*
+> *I'm an engineering student who builds **production-grade software across the entire stack** — from performance-tuned C++ firmware running on dual-core microcontrollers, to real-time AI desktop applications streaming audio over WebSockets, to full-stack web platforms that have served live events with 100+ concurrent users. I implement things from first principles: my TOTP authenticator is built from raw HMAC primitives (no crypto libraries) and **passes every official RFC 6238 test vector**, and my photo booth renders 25 FPS video with custom integer-only image filters on a chip with no GPU.*
 
 - 🔭 Currently building **AI-powered desktop applications** with Electron, real-time audio pipelines, and vision LLMs
 - ⚙️ Equally at home doing **microcontroller-level programming** — register-level embedded work, FreeRTOS task pinning, PSRAM buffer management, lock-free inter-core sync
@@ -31,7 +31,7 @@
 
 | Capability | Proven in | The receipt |
 |---|---|---|
-| **Microcontroller-level programming & RTOS** | [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3) | Dual-core FreeRTOS task pinning, lock-free producer/consumer sync, ~470 KB of hand-managed PSRAM frame buffers |
+| **Microcontroller-level programming & RTOS** | [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3) | Dual-core FreeRTOS task pinning, lock-free producer/consumer sync, ~470 KB of explicitly managed PSRAM frame buffers |
 | **Real-time streaming systems** | [AI Desktop Overlay](https://github.com/ubairrr/interview-helper) | Two parallel 16 kHz PCM pipelines → Deepgram WebSockets, off-main-thread AudioWorklets, STT-driven utterance endpointing |
 | **Applied cryptography** | [TOTP Generator](https://github.com/ubairrr/Ubair-s_TOTP_Gen) | RFC 4226/6238 implemented from raw `hmac`/`struct` primitives — validated against all official RFC 6238 Appendix B test vectors |
 | **LLM integration & prompt engineering** | [AI Prompt Studio](https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator) · [Overlay](https://github.com/ubairrr/interview-helper) | End-to-end SSE token streaming, provider-agnostic adapter across 7+ LLM backends, sentinel-delimited output contracts |
@@ -106,7 +106,7 @@
 
 > **C++ · FreeRTOS · LVGL 8.3 · PlatformIO · ESPAsyncWebServer · JPEGDEC**
 
-A complete standalone touchscreen photo booth running on a single ESP32-S3 — **microcontroller-level programming end to end**: a **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone, all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of hand-written C++ across a layered HAL → core → UI architecture, written directly against the silicon: FreeRTOS core pinning, sensor register configuration, PSRAM/SRAM budgeting, and linker-section control.
+A complete standalone touchscreen photo booth running on a single ESP32-S3 — **microcontroller-level programming end to end**: a **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone, all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of C++ across a layered HAL → core → UI architecture, built directly against the silicon: FreeRTOS core pinning, sensor register configuration, PSRAM/SRAM budgeting, and linker-section control.
 
 **How the two cores split the work:**
 
@@ -128,9 +128,9 @@ flowchart LR
 - **Dual-core, lock-free pipeline** — camera acquisition runs as a FreeRTOS task pinned to **Core 0** while LVGL UI + filter rendering own **Core 1**; the cores synchronize through volatile flag handoff (no mutexes, no queues) across a triple-buffered video path (~470 KB of `ps_malloc`'d PSRAM)
 - **Zero-cost portrait video** — instead of rotating frames in software, the OV3660 sensor is **windowed at the raw-array level** (`set_res_raw`) to output native 240×320 portrait, and the copy pass **fuses big→little endian byte-swap with green-cast color correction** into a single loop over 76,800 pixels
 - **8 real-time filters in pure integer math** — RGB565 grayscale via shift-weighted luma `(R·3 + G·4 + B) >> 3`, sepia as integer matrix mixes, vivid as fixed-point saturation/contrast (`×15/10`, `×12/10`), invert as a single bitwise NOT per pixel — no floats anywhere on the hot path
-- **Hand-rolled BMP codec** — a from-scratch 24-bit BMP encoder (little-endian headers, 4-byte row padding, watchdog-safe `yield()` every 16 rows) plus **two decoders**, including a row-streamed 4× downsampling thumbnail decoder that never loads a full image into memory
+- **Custom BMP codec** — a from-scratch 24-bit BMP encoder (little-endian headers, 4-byte row padding, watchdog-safe `yield()` every 16 rows) plus **two decoders**, including a row-streamed 4× downsampling thumbnail decoder that never loads a full image into memory
 - **An entire web service inside the firmware** — async HTTP server exposing 5 REST routes with real status-code semantics, serving a **self-contained ~5 KB dark-mode SPA from PROGMEM** (lazy-loaded grid, batch download/delete, glassmorphism — zero external dependencies), with **on-the-fly server-side BMP thumbnailing** and chunked file streaming from SD over a self-hosted WiFi AP + QR-code pairing
-- **Boot animation engine** — a hand-written MJPEG container parser scans a 2 MB flash-resident video for JPEG SOI/EOI markers and decodes frames **in place from flash** via JPEGDEC at 15 FPS, before LVGL even initializes; assets produced by a custom `ffmpeg → Python → C-array` pipeline
+- **Boot animation engine** — a custom MJPEG container parser scans a 2 MB flash-resident video for JPEG SOI/EOI markers and decodes frames **in place from flash** via JPEGDEC at 15 FPS, before LVGL even initializes; assets produced by a custom `ffmpeg → Python → C-array` pipeline
 - **Memory engineering** — all LVGL heap redirected into PSRAM, plus a GCC force-included header that re-sections large const assets into flash `.rodata`, **reclaiming ~150 KB of internal SRAM**
 
 <details>
@@ -234,12 +234,12 @@ flowchart LR
 A live web app that turns a rough idea into a **master-level, LLM-optimized prompt in a single pass** — replacing the usual 5–6 rounds of manual prompt iteration — with tokens streaming into the UI in real time. ~950 lines of code, zero frontend frameworks, deployed live.
 
 **🔥 Headline engineering:**
-- **End-to-end token streaming** — Gemini's SSE stream is consumed server-side, re-emitted as clean Server-Sent Events through a Flask streaming proxy, and parsed in the browser by a **hand-rolled SSE client** (`fetch` + `ReadableStream` reader + manual event-boundary buffering — built from scratch because `EventSource` can't POST)
+- **End-to-end token streaming** — Gemini's SSE stream is consumed server-side, re-emitted as clean Server-Sent Events through a Flask streaming proxy, and parsed in the browser by a **custom SSE client** (`fetch` + `ReadableStream` reader + manual event-boundary buffering — built from scratch because `EventSource` can't POST)
 - **The 4-D meta-prompting engine** — a system prompt that frames the model as a prompt-optimization specialist running *Deconstruct → Diagnose → Develop → Deliver*, including a **request-type → technique routing table** (creative → multi-perspective, technical → constraint-based, educational → few-shot, complex → chain-of-thought) and auto-detected BASIC/DETAIL operating modes
 - **Deterministic LLM output via sentinel delimiters** — the optimized prompt must arrive wrapped in `<<<PROMPT>>> … <<<END>>>`, making free-form LLM output reliably machine-parseable and powering one-click "copy only the prompt"; the client parser even tolerates an **unclosed block so the prompt card renders progressively mid-stream**
 - **Production-grade upstream resilience** — 5-attempt exponential backoff that distinguishes 429 rate limits (honoring `Retry-After` headers) from 5xx transients from connection failures, each separately logged; streaming errors delivered *in-band* as SSE events so the connection never just dies
 - **Key hygiene** — the Gemini key lives server-side only (env + dotenv, hard `RuntimeError` if unset); every model call is proxied so the secret never touches the client
-- **Hand-built brutalist design system** — CSS custom-property theming, hard offset shadows with a physical button "press" effect, progressive four-card rendering (prompt / improvements / techniques / pro-tip), `aria-live` streaming regions and full keyboard-focus treatment — all in vanilla HTML/CSS/JS
+- **Custom brutalist design system** — CSS custom-property theming, hard offset shadows with a physical button "press" effect, progressive four-card rendering (prompt / improvements / techniques / pro-tip), `aria-live` streaming regions and full keyboard-focus treatment — all in vanilla HTML/CSS/JS
 
 <br/>
 
@@ -261,7 +261,7 @@ A live web app that turns a rough idea into a **master-level, LLM-optimized prom
 
 > **Python · Flask 3 · raw `hmac` / `hashlib` / `struct` / `secrets` · Vanilla JS**
 
-A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine is implemented from scratch** — no `pyotp`, no OTP library of any kind. Every step of RFC 4226 (HOTP) and RFC 6238 (TOTP) is hand-built from Python stdlib primitives, and the implementation **passes all six official RFC 6238 Appendix B reference test vectors** across SHA-1, SHA-256, and SHA-512.
+A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine is implemented from scratch** — no `pyotp`, no OTP library of any kind. Every step of RFC 4226 (HOTP) and RFC 6238 (TOTP) is built from Python stdlib primitives, and the implementation **passes all six official RFC 6238 Appendix B reference test vectors** across SHA-1, SHA-256, and SHA-512.
 
 **🔥 Headline engineering:**
 - **The RFC pipeline, by hand** — Base32 key decoding (with auto-repair of unpadded/lowercase real-world secrets), 8-byte big-endian counter packing via `struct.pack('>Q', …)`, HMAC digest, **RFC 4226 §5.3 dynamic truncation** (`offset = hash[-1] & 0x0F`), sign-bit masking (`& 0x7FFFFFFF`), and zero-padded modulo output that correctly preserves leading-zero codes — a classic bug in naive implementations, handled
@@ -269,7 +269,7 @@ A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine
 - **Goes beyond standard authenticator apps** — configurable 6–10 digit codes, 1–300 s time steps, custom T0 epochs, three hash algorithms, and **clock-drift-tolerant verification** that checks a ±N-step window around the current counter
 - **CSPRNG key generation** — secrets generated with `secrets.token_bytes` (not `random`), Base32-encoded, length-bounded 16–64 bytes
 - **Clean REST API** — 4 endpoints with strict server-side validation and tiered error handling (`ValueError → 400`, generic → 500); `generate` returns the OTP *plus* live metadata (seconds-to-expiry, time-step counter, timestamp)
-- **Dependency-free frontend** — 348 lines of vanilla JS with 1-second live auto-refresh, an **urgency-colored countdown bar** (gradient → amber under 40% → red under 20%), clipboard integration, animated verify pass/fail states, and a hand-written 556-line dark-theme CSS design system
+- **Dependency-free frontend** — 348 lines of vanilla JS with 1-second live auto-refresh, an **urgency-colored countdown bar** (gradient → amber under 40% → red under 20%), clipboard integration, animated verify pass/fail states, and a 556-line custom dark-theme CSS design system
 - **Deployed live on Render** behind gunicorn — [try it](https://ubair-s-totp-gen-1.onrender.com) *(free tier, allow ~60 s cold start)*
 
 <br/>
@@ -299,7 +299,7 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
 - **Multi-criteria live ranking** — three-level sort (completion status → points descending → fastest elapsed time as the tiebreak among finishers), recomputed on every leaderboard read
 - **Pragmatic real-time under load** — tiered HTTP polling (admin 2 s / players 3 s / leaderboard 5 s) against an **in-memory game-state FSM** (`waiting → active → stopped`), so the highest-frequency requests cost zero database reads; SQLite handles the write-light workload (one row per registration, one update per solve)
 - **Synchronized event orchestration** — an admin control plane (start / stop / full reset with data wipe) flips every connected client from an auto-updating waiting room into the live game simultaneously
-- **Hand-coded Matrix rain** — a 96-line HTML5 Canvas renderer with per-column drop arrays, translucent-black trail persistence, per-glyph glow, resize handling and hydration-safe mounting — plus a full terminal/CRT design system (typewriter boot sequence, glitch keyframes, scan-line overlays, medal-tinted responsive leaderboard)
+- **Custom Matrix rain** — a 96-line HTML5 Canvas renderer with per-column drop arrays, translucent-black trail persistence, per-glyph glow, resize handling and hydration-safe mounting — plus a full terminal/CRT design system (typewriter boot sequence, glitch keyframes, scan-line overlays, medal-tinted responsive leaderboard)
 - **Honest architecture awareness** — the in-memory FSM deliberately assumes a single Node process, a constraint chosen (and understood) for a LAN-deployed one-night event — the kind of tradeoff reasoning that matters more than the stack
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
@@ -310,7 +310,7 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
 
 | | |
 |---|---|
-| 🧮 **~9,500+ lines** | of hand-written code across featured projects — C++, Python, TypeScript, JavaScript |
+| 🧮 **~9,500+ lines** | of code across featured projects — C++, Python, TypeScript, JavaScript |
 | 🌐 **2 apps live in production** | [TOTP Generator](https://ubair-s-totp-gen-1.onrender.com) · [AI Prompt Studio](https://ubair-s-ai-prompt-generator.onrender.com) |
 | ✅ **6 / 6 RFC test vectors** | official RFC 6238 Appendix B reference vectors passed by from-scratch crypto |
 | 🎞️ **25 FPS** | filtered live video on a microcontroller with no GPU |
