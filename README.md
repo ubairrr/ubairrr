@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1f6feb&height=220&section=header&text=Ubair%20Mustafa&fontSize=52&fontColor=ffffff&fontAlignY=35&desc=Software%20Engineer%20%7C%20From%20Bare-Metal%20Firmware%20to%20Real-Time%20AI&descSize=18&descAlignY=55&animation=fadeIn" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=Embedded+Systems+%7C+Real-Time+AI+Pipelines+%7C+Full-Stack+Web;Dual-Core+Firmware+%C2%B7+LLM+Orchestration+%C2%B7+Applied+Cryptography;I+ship+working+software+at+every+layer+of+the+stack)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=Microcontroller-Level+Programming+%7C+Real-Time+AI+%7C+Full-Stack+Web;Dual-Core+Firmware+%C2%B7+LLM+Orchestration+%C2%B7+Applied+Cryptography;I+ship+working+software+at+every+layer+of+the+stack)](https://git.io/typing-svg)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mustafaubair)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](https://mail.google.com/mail/?view=cm&to=mustafaubair@gmail.com)
@@ -18,7 +18,7 @@
 > *I'm an engineering student who builds **production-grade software across the entire stack** — from hand-tuned C++ firmware running on dual-core microcontrollers, to real-time AI desktop applications streaming audio over WebSockets, to full-stack web platforms that have served live events with 100+ concurrent users. I implement things from first principles: my TOTP authenticator is built from raw HMAC primitives (no crypto libraries) and **passes every official RFC 6238 test vector**, and my photo booth renders 25 FPS video with custom integer-only image filters on a chip with no GPU.*
 
 - 🔭 Currently building **AI-powered desktop applications** with Electron, real-time audio pipelines, and vision LLMs
-- ⚙️ Equally at home doing **register-level embedded work** — FreeRTOS task pinning, PSRAM buffer management, lock-free inter-core sync
+- ⚙️ Equally at home doing **microcontroller-level programming** — register-level embedded work, FreeRTOS task pinning, PSRAM buffer management, lock-free inter-core sync
 - 🎓 Pursuing **B.Tech in CS & AI** at Jamia Hamdard University (2023–2027)
 - 🛡️ **Management Head at HACKED BY JH** — I've run live CTF events and built the software they ran on
 - 📍 Based in **Delhi, India** · Open to **internships** in backend, embedded, and AI/ML engineering
@@ -31,7 +31,7 @@
 
 | Capability | Proven in | The receipt |
 |---|---|---|
-| **Embedded systems & RTOS** | [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3) | Dual-core FreeRTOS task pinning, lock-free producer/consumer sync, ~470 KB of hand-managed PSRAM frame buffers |
+| **Microcontroller-level programming & RTOS** | [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3) | Dual-core FreeRTOS task pinning, lock-free producer/consumer sync, ~470 KB of hand-managed PSRAM frame buffers |
 | **Real-time streaming systems** | [AI Desktop Overlay](https://github.com/ubairrr/interview-helper) | Two parallel 16 kHz PCM pipelines → Deepgram WebSockets, off-main-thread AudioWorklets, STT-driven utterance endpointing |
 | **Applied cryptography** | [TOTP Generator](https://github.com/ubairrr/Ubair-s_TOTP_Gen) | RFC 4226/6238 implemented from raw `hmac`/`struct` primitives — validated against all official RFC 6238 Appendix B test vectors |
 | **LLM integration & prompt engineering** | [AI Prompt Studio](https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator) · [Overlay](https://github.com/ubairrr/interview-helper) | End-to-end SSE token streaming, provider-agnostic adapter across 7+ LLM backends, sentinel-delimited output contracts |
@@ -106,7 +106,7 @@
 
 > **C++ · FreeRTOS · LVGL 8.3 · PlatformIO · ESPAsyncWebServer · JPEGDEC**
 
-A complete standalone touchscreen photo booth running on a single ESP32-S3: **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone — all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of hand-written C++ across a layered HAL → core → UI architecture.
+A complete standalone touchscreen photo booth running on a single ESP32-S3 — **microcontroller-level programming end to end**: a **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone, all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of hand-written C++ across a layered HAL → core → UI architecture, written directly against the silicon: FreeRTOS core pinning, sensor register configuration, PSRAM/SRAM budgeting, and linker-section control.
 
 **How the two cores split the work:**
 
@@ -215,6 +215,36 @@ flowchart LR
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
+## ✨ AI Prompt Studio — Streaming Meta-Prompt Engine
+
+<div align="center">
+  <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator">
+    <img src="https://raw.githubusercontent.com/ubairrr/Ubair-s-AI-Prompt-Generator/main/assets/app_snapshot.png" width="85%" alt="AI Prompt Studio screenshot" />
+  </a>
+</div>
+
+<p align="center">
+  <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator"><img src="https://img.shields.io/badge/Repo-AI--Prompt--Generator-1f6feb?style=for-the-badge&logo=github" /></a>
+  <a href="https://ubair-s-ai-prompt-generator.onrender.com"><img src="https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" /></a>
+  <img src="https://img.shields.io/badge/streaming-SSE_end--to--end-blueviolet?style=for-the-badge" />
+</p>
+
+> **Flask 3 · Gemini 2.5 Flash (raw REST, no SDK) · Server-Sent Events · Vanilla JS**
+
+A live web app that turns a rough idea into a **master-level, LLM-optimized prompt in a single pass** — replacing the usual 5–6 rounds of manual prompt iteration — with tokens streaming into the UI in real time. ~950 lines of code, zero frontend frameworks, deployed live.
+
+**🔥 Headline engineering:**
+- **End-to-end token streaming** — Gemini's SSE stream is consumed server-side, re-emitted as clean Server-Sent Events through a Flask streaming proxy, and parsed in the browser by a **hand-rolled SSE client** (`fetch` + `ReadableStream` reader + manual event-boundary buffering — built from scratch because `EventSource` can't POST)
+- **The 4-D meta-prompting engine** — a system prompt that frames the model as a prompt-optimization specialist running *Deconstruct → Diagnose → Develop → Deliver*, including a **request-type → technique routing table** (creative → multi-perspective, technical → constraint-based, educational → few-shot, complex → chain-of-thought) and auto-detected BASIC/DETAIL operating modes
+- **Deterministic LLM output via sentinel delimiters** — the optimized prompt must arrive wrapped in `<<<PROMPT>>> … <<<END>>>`, making free-form LLM output reliably machine-parseable and powering one-click "copy only the prompt"; the client parser even tolerates an **unclosed block so the prompt card renders progressively mid-stream**
+- **Production-grade upstream resilience** — 5-attempt exponential backoff that distinguishes 429 rate limits (honoring `Retry-After` headers) from 5xx transients from connection failures, each separately logged; streaming errors delivered *in-band* as SSE events so the connection never just dies
+- **Key hygiene** — the Gemini key lives server-side only (env + dotenv, hard `RuntimeError` if unset); every model call is proxied so the secret never touches the client
+- **Hand-built brutalist design system** — CSS custom-property theming, hard offset shadows with a physical button "press" effect, progressive four-card rendering (prompt / improvements / techniques / pro-tip), `aria-live` streaming regions and full keyboard-focus treatment — all in vanilla HTML/CSS/JS
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
 ## 🔐 TOTP Generator — RFC 6238 From Raw Primitives
 
 <div align="center">
@@ -241,36 +271,6 @@ A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine
 - **Clean REST API** — 4 endpoints with strict server-side validation and tiered error handling (`ValueError → 400`, generic → 500); `generate` returns the OTP *plus* live metadata (seconds-to-expiry, time-step counter, timestamp)
 - **Dependency-free frontend** — 348 lines of vanilla JS with 1-second live auto-refresh, an **urgency-colored countdown bar** (gradient → amber under 40% → red under 20%), clipboard integration, animated verify pass/fail states, and a hand-written 556-line dark-theme CSS design system
 - **Deployed live on Render** behind gunicorn — [try it](https://ubair-s-totp-gen-1.onrender.com) *(free tier, allow ~60 s cold start)*
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
-
-## ✨ AI Prompt Studio — Streaming Meta-Prompt Engine
-
-<div align="center">
-  <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator">
-    <img src="https://raw.githubusercontent.com/ubairrr/Ubair-s-AI-Prompt-Generator/main/assets/app_snapshot.png" width="85%" alt="AI Prompt Studio screenshot" />
-  </a>
-</div>
-
-<p align="center">
-  <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator"><img src="https://img.shields.io/badge/Repo-AI--Prompt--Generator-1f6feb?style=for-the-badge&logo=github" /></a>
-  <a href="https://ubair-s-ai-prompt-generator.onrender.com"><img src="https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" /></a>
-  <img src="https://img.shields.io/badge/streaming-SSE_end--to--end-blueviolet?style=for-the-badge" />
-</p>
-
-> **Flask 3 · Gemini 2.5 Flash (raw REST, no SDK) · Server-Sent Events · Vanilla JS**
-
-A live web app that turns a rough idea into a **master-level, LLM-optimized prompt in a single pass** — replacing the usual 5–6 rounds of manual prompt iteration — with tokens streaming into the UI in real time. ~950 lines of code, zero frontend frameworks, deployed live.
-
-**🔥 Headline engineering:**
-- **End-to-end token streaming** — Gemini's SSE stream is consumed server-side, re-emitted as clean Server-Sent Events through a Flask streaming proxy, and parsed in the browser by a **hand-rolled SSE client** (`fetch` + `ReadableStream` reader + manual event-boundary buffering — built from scratch because `EventSource` can't POST)
-- **The 4-D meta-prompting engine** — a system prompt that frames the model as a prompt-optimization specialist running *Deconstruct → Diagnose → Develop → Deliver*, including a **request-type → technique routing table** (creative → multi-perspective, technical → constraint-based, educational → few-shot, complex → chain-of-thought) and auto-detected BASIC/DETAIL operating modes
-- **Deterministic LLM output via sentinel delimiters** — the optimized prompt must arrive wrapped in `<<<PROMPT>>> … <<<END>>>`, making free-form LLM output reliably machine-parseable and powering one-click "copy only the prompt"; the client parser even tolerates an **unclosed block so the prompt card renders progressively mid-stream**
-- **Production-grade upstream resilience** — 5-attempt exponential backoff that distinguishes 429 rate limits (honoring `Retry-After` headers) from 5xx transients from connection failures, each separately logged; streaming errors delivered *in-band* as SSE events so the connection never just dies
-- **Key hygiene** — the Gemini key lives server-side only (env + dotenv, hard `RuntimeError` if unset); every model call is proxied so the secret never touches the client
-- **Hand-built brutalist design system** — CSS custom-property theming, hard offset shadows with a physical button "press" effect, progressive four-card rendering (prompt / improvements / techniques / pro-tip), `aria-live` streaming regions and full keyboard-focus treatment — all in vanilla HTML/CSS/JS
 
 <br/>
 
