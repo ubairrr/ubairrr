@@ -11,7 +11,7 @@
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 🧑‍💻 About Me
 
@@ -23,7 +23,7 @@
 - 🛡️ **Management Head at HACKED BY JH** — I've run live CTF events and built the software they ran on
 - 📍 Based in **Delhi, India** · Open to **internships** in backend, embedded, and AI/ML engineering
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 🧬 Engineering DNA
 
@@ -39,40 +39,28 @@
 | **Low-level performance work** | [PhotoBooth ESP32-S3](https://github.com/ubairrr/PhotoBooth_ESP32-S3) | Integer-only RGB565 filters, bit-replication color expansion, linker-section tricks reclaiming ~150 KB of SRAM |
 | **OS-level platform engineering** | [AI Desktop Overlay](https://github.com/ubairrr/interview-helper) | macOS screen-capture exclusion (`NSWindowSharingNone`), system-audio loopback workaround, click-through overlay windows |
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 🛠️ Tech Stack & Skills
 
 <div align="center">
 
 ### Languages
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+<img src="https://skillicons.dev/icons?i=cpp,c,python,ts,js,java&theme=dark" />
+
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Embedded & Systems
+<img src="https://skillicons.dev/icons?i=arduino,cmake&theme=dark" />
+
 ![ESP32](https://img.shields.io/badge/ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
 ![FreeRTOS](https://img.shields.io/badge/FreeRTOS-8CC04B?style=for-the-badge&logoColor=white)
 ![PlatformIO](https://img.shields.io/badge/PlatformIO-FF7F00?style=for-the-badge&logo=platformio&logoColor=white)
 ![LVGL](https://img.shields.io/badge/LVGL_8.3-2A2A2A?style=for-the-badge&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino_Framework-00878F?style=for-the-badge&logo=arduino&logoColor=white)
 
-### Frontend & Desktop
-![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+### Frontend, Desktop & Backend
+<img src="https://skillicons.dev/icons?i=react,nextjs,electron,vite,tailwind,flask,nodejs,prisma,sqlite&theme=dark" />
 
-### Backend & Data
-![Flask](https://img.shields.io/badge/Flask_3-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma_6-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white)
 
 ### AI & Real-Time
@@ -83,34 +71,58 @@
 ![WebSockets](https://img.shields.io/badge/WebSockets_%26_SSE-010101?style=for-the-badge&logoColor=white)
 
 ### Infrastructure & Tools
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+<img src="https://skillicons.dev/icons?i=docker,aws,git,githubactions&theme=dark" />
+
 ![Render](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=render&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
+<div align="center">
 
 # 🚀 Featured Projects
 
-> *Each project below links to real, readable source. The deep-dive sections are there because the most interesting engineering rarely fits in a tagline.*
+*Each project links to real, readable source. The deep-dive sections exist because the most interesting engineering rarely fits in a tagline.*
+
+</div>
 
 <br/>
 
 ## 📸 PhotoBooth ESP32-S3 — A Camera OS on a Microcontroller
 
-<p>
-  <a href="https://github.com/ubairrr/PhotoBooth_ESP32-S3"><img src="https://img.shields.io/badge/Repo-PhotoBooth__ESP32--S3-1f6feb?style=for-the-badge&logo=github" /></a>
+<div align="center">
+  <a href="https://github.com/ubairrr/PhotoBooth_ESP32-S3">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ubairrr&repo=PhotoBooth_ESP32-S3&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb" />
+  </a>
+</div>
+
+<p align="center">
   <img src="https://img.shields.io/badge/C++-~4,000_LOC-00599C?style=for-the-badge" />
   <img src="https://img.shields.io/badge/platform-ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white" />
-  <img src="https://img.shields.io/github/stars/ubairrr/PhotoBooth_ESP32-S3?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LVGL-8.3-2A2A2A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/viewfinder-25_FPS-success?style=for-the-badge" />
 </p>
 
 > **C++ · FreeRTOS · LVGL 8.3 · PlatformIO · ESPAsyncWebServer · JPEGDEC**
 
 A complete standalone touchscreen photo booth running on a single ESP32-S3: **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone — all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of hand-written C++ across a layered HAL → core → UI architecture.
+
+**How the two cores split the work:**
+
+```mermaid
+flowchart LR
+    subgraph CORE0["⚙️ Core 0 — Camera Task"]
+        CAM["OV3660 sensor<br/>native 240×320 portrait<br/>(raw sensor windowing)"] --> SWAP["Fused single pass:<br/>byte-swap + green-cast fix<br/>76,800 px/frame"]
+        SWAP --> PREV["preview_buf<br/>(PSRAM, 150 KB)"]
+    end
+    PREV -.->|"lock-free volatile<br/>flag handoff"| FILT
+    subgraph CORE1["🎨 Core 1 — UI Loop"]
+        FILT["Integer-only RGB565 filter<br/>(8 modes, zero floats)"] --> CANVAS["lv_canvas (zero-copy)<br/>LVGL render @ ~25 FPS"]
+    end
+    CANVAS --> LCD["ILI9341 display<br/>40 MHz SPI"]
+    PREV -.->|"async capture flag"| SD["BMP encoder → SD card<br/>+ WiFi AP web gallery"]
+```
 
 **🔥 Headline engineering:**
 - **Dual-core, lock-free pipeline** — camera acquisition runs as a FreeRTOS task pinned to **Core 0** while LVGL UI + filter rendering own **Core 1**; the cores synchronize through volatile flag handoff (no mutexes, no queues) across a triple-buffered video path (~470 KB of `ps_malloc`'d PSRAM)
@@ -140,17 +152,40 @@ A complete standalone touchscreen photo booth running on a single ESP32-S3: **25
 
 <br/>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
 ## 🕵️ Real-Time AI Desktop Overlay — Live STT + Vision LLMs on macOS
 
-<p>
+<div align="center">
+  <a href="https://github.com/ubairrr/interview-helper">
+    <img src="https://raw.githubusercontent.com/ubairrr/interview-helper/main/assets/demo.png" width="85%" alt="Real-Time AI Desktop Overlay demo" />
+  </a>
+</div>
+
+<p align="center">
   <a href="https://github.com/ubairrr/interview-helper"><img src="https://img.shields.io/badge/Repo-interview--helper-1f6feb?style=for-the-badge&logo=github" /></a>
   <img src="https://img.shields.io/badge/platform-macOS-lightgrey?style=for-the-badge&logo=apple" />
+  <img src="https://img.shields.io/badge/bundle_cut-78.7%25-success?style=for-the-badge" />
   <img src="https://img.shields.io/github/stars/ubairrr/interview-helper?style=for-the-badge" />
 </p>
 
 > **Electron 40 · React 19 · Vite 7 · Deepgram Nova-2 · OpenAI-compatible LLMs**
 
 A transparent, always-on-top macOS overlay that **live-transcribes both sides of a conversation through two parallel speech-to-text pipelines**, streams answers from any LLM, and performs on-demand screenshot → vision-model analysis — while remaining invisible to screen-sharing apps. Built as an educational proof-of-concept in real-time systems and macOS platform engineering, with the ethics disclaimer front and center.
+
+**The dual audio pipeline:**
+
+```mermaid
+flowchart LR
+    MIC["🎤 Microphone<br/>getUserMedia"] --> W1["AudioWorklet<br/>(audio thread)"]
+    SYS["🔊 System audio<br/>desktopCapturer +<br/>MacLoopback flag"] --> W2["AudioWorklet<br/>(audio thread)"]
+    W1 --> CTX["Shared 16 kHz<br/>AudioContext"]
+    W2 --> CTX
+    CTX -->|"IPC: Float32 chunks"| MAIN["Main process<br/>Float32 → Int16 PCM<br/>(converted once)"]
+    MAIN -->|"WebSocket ×2<br/>+ 10 s keep-alive"| DG["Deepgram Nova-2<br/>linear16 · mono"]
+    DG -->|"speech_final +<br/>min-length gate"| LLM["LLM dispatch<br/>(7+ swappable providers)"]
+    LLM --> UI["Stealth overlay UI<br/>NSWindowSharingNone"]
+```
 
 **🔥 Headline engineering:**
 - **Dual independent real-time audio pipelines** — microphone *and* system audio each run their own `AudioWorklet` on the audio rendering thread, share a single 16 kHz `AudioContext` (browser-level resampling, zero manual resample code), convert Float32 → Int16 PCM exactly once in the main process, and stream over **two separate Deepgram Nova-2 WebSockets** with readyState-guarded writes and 10-second keep-alives
@@ -178,12 +213,20 @@ A transparent, always-on-top macOS overlay that **live-transcribes both sides of
 
 <br/>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
 ## 🔐 TOTP Generator — RFC 6238 From Raw Primitives
 
-<p>
-  <a href="https://github.com/ubairrr/Ubair-s_TOTP_Gen"><img src="https://img.shields.io/badge/Repo-Ubair--s__TOTP__Gen-1f6feb?style=for-the-badge&logo=github" /></a>
+<div align="center">
+  <a href="https://github.com/ubairrr/Ubair-s_TOTP_Gen">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ubairrr&repo=Ubair-s_TOTP_Gen&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb" />
+  </a>
+</div>
+
+<p align="center">
   <a href="https://ubair-s-totp-gen-1.onrender.com"><img src="https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" /></a>
-  <img src="https://img.shields.io/github/stars/ubairrr/Ubair-s_TOTP_Gen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/RFC_6238-6%2F6_test_vectors_passed-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/crypto-zero_libraries-critical?style=for-the-badge" />
 </p>
 
 > **Python · Flask 3 · raw `hmac` / `hashlib` / `struct` / `secrets` · Vanilla JS**
@@ -201,12 +244,20 @@ A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine
 
 <br/>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
 ## ✨ AI Prompt Studio — Streaming Meta-Prompt Engine
 
-<p>
+<div align="center">
+  <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator">
+    <img src="https://raw.githubusercontent.com/ubairrr/Ubair-s-AI-Prompt-Generator/main/assets/app_snapshot.png" width="85%" alt="AI Prompt Studio screenshot" />
+  </a>
+</div>
+
+<p align="center">
   <a href="https://github.com/ubairrr/Ubair-s-AI-Prompt-Generator"><img src="https://img.shields.io/badge/Repo-AI--Prompt--Generator-1f6feb?style=for-the-badge&logo=github" /></a>
   <a href="https://ubair-s-ai-prompt-generator.onrender.com"><img src="https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" /></a>
-  <img src="https://img.shields.io/github/stars/ubairrr/Ubair-s-AI-Prompt-Generator?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/streaming-SSE_end--to--end-blueviolet?style=for-the-badge" />
 </p>
 
 > **Flask 3 · Gemini 2.5 Flash (raw REST, no SDK) · Server-Sent Events · Vanilla JS**
@@ -223,12 +274,20 @@ A live web app that turns a rough idea into a **master-level, LLM-optimized prom
 
 <br/>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
+
 ## 🎮 HACKED — Live Multiplayer Cybersecurity Game
 
-<p>
-  <a href="https://github.com/ubairrr/HACKED-GAME"><img src="https://img.shields.io/badge/Repo-HACKED--GAME-1f6feb?style=for-the-badge&logo=github" /></a>
+<div align="center">
+  <a href="https://github.com/ubairrr/HACKED-GAME">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=ubairrr&repo=HACKED-GAME&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb" />
+  </a>
+</div>
+
+<p align="center">
   <img src="https://img.shields.io/badge/battle--tested-100%2B_concurrent_players-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/github/stars/ubairrr/HACKED-GAME?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/scoring-server--authoritative-success?style=for-the-badge" />
 </p>
 
 > **Next.js 15 (App Router) · React 19 · TypeScript · Prisma 6 · SQLite · Tailwind v4**
@@ -243,7 +302,7 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
 - **Hand-coded Matrix rain** — a 96-line HTML5 Canvas renderer with per-column drop arrays, translucent-black trail persistence, per-glyph glow, resize handling and hydration-safe mounting — plus a full terminal/CRT design system (typewriter boot sequence, glitch keyframes, scan-line overlays, medal-tinted responsive leaderboard)
 - **Honest architecture awareness** — the in-memory FSM deliberately assumes a single Node process, a constraint chosen (and understood) for a LAN-deployed one-night event — the kind of tradeoff reasoning that matters more than the stack
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 📐 By the Numbers
 
@@ -261,7 +320,7 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 📊 GitHub Analytics
 
@@ -285,7 +344,7 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
   <img src="https://github-profile-trophy.vercel.app/?username=ubairrr&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=10" width="98%" />
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 💼 Professional Highlights
 
@@ -317,7 +376,7 @@ CGPA: **7.5** (Currently Pursuing)
 </tr>
 </table>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 🐍 Contribution Snake
 
@@ -329,7 +388,7 @@ CGPA: **7.5** (Currently Pursuing)
   </picture>
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" />
 
 ## 📫 Let's Connect
 
