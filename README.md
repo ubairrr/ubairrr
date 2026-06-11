@@ -15,7 +15,7 @@
 
 ## 🧑‍💻 About Me
 
-> *I'm an engineering student who builds **production-grade software across the entire stack** — from performance-tuned C++ firmware running on dual-core microcontrollers, to real-time AI desktop applications streaming audio over WebSockets, to full-stack web platforms that have served live events with 100+ concurrent users. I implement things from first principles: my TOTP authenticator is built from raw HMAC primitives (no crypto libraries) and **passes every official RFC 6238 test vector**, and my photo booth renders 25 FPS video with custom integer-only image filters on a chip with no GPU.*
+> *I'm an engineering student who builds **working software across the entire stack** — from performance-tuned C++ firmware running on dual-core microcontrollers, to real-time AI desktop applications streaming audio over WebSockets, to full-stack web platforms used at live events by 100+ participants. I implement things from first principles: my TOTP authenticator is built from raw HMAC primitives (no crypto libraries) and **passes every official RFC 6238 test vector**, and my photo booth renders 25 FPS video with custom integer-only image filters on a chip with no GPU.*
 
 - 🔭 Currently building **AI-powered desktop applications** with Electron, real-time audio pipelines, and vision LLMs
 - ⚙️ Equally at home doing **microcontroller-level programming** — register-level embedded work, FreeRTOS task pinning, PSRAM buffer management, lock-free inter-core sync
@@ -89,7 +89,7 @@
 
 <br/>
 
-## 📸 PhotoBooth ESP32-S3 — A Camera OS on a Microcontroller
+## 📸 PhotoBooth ESP32-S3 — A Complete Camera System on a Microcontroller
 
 <div align="center">
   <a href="https://github.com/ubairrr/PhotoBooth_ESP32-S3">
@@ -106,7 +106,7 @@
 
 > **C++ · FreeRTOS · LVGL 8.3 · PlatformIO · ESPAsyncWebServer · JPEGDEC**
 
-A complete standalone touchscreen photo booth running on a single ESP32-S3 — **microcontroller-level programming end to end**: a **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone, all with no OS, no GPU, and a few hundred KB of usable RAM. ~4,000 lines of C++ across a layered HAL → core → UI architecture, built directly against the silicon: FreeRTOS core pinning, sensor register configuration, PSRAM/SRAM budgeting, and linker-section control.
+A complete standalone touchscreen photo booth running on a single ESP32-S3 — **microcontroller-level programming end to end**: a **25 FPS live viewfinder**, 8 real-time image filters, an on-device photo gallery, and an **embedded WiFi web app** for downloading photos to your phone, all with no GPU, no display server, and a few hundred KB of usable RAM. ~4,000 lines of C++ across a layered HAL → core → UI architecture, with direct control of the hardware: FreeRTOS core pinning, sensor register configuration, PSRAM/SRAM budgeting, and linker-section control.
 
 **How the two cores split the work:**
 
@@ -171,7 +171,7 @@ flowchart LR
 
 > **Electron 40 · React 19 · Vite 7 · Deepgram Nova-2 · OpenAI-compatible LLMs**
 
-A transparent, always-on-top macOS overlay that **live-transcribes both sides of a conversation through two parallel speech-to-text pipelines**, streams answers from any LLM, and performs on-demand screenshot → vision-model analysis — while remaining invisible to screen-sharing apps. Built as an educational proof-of-concept in real-time systems and macOS platform engineering, with the ethics disclaimer front and center.
+A transparent, always-on-top macOS overlay that **live-transcribes both sides of a conversation through two parallel speech-to-text pipelines**, streams answers from any LLM, and performs on-demand screenshot → vision-model analysis — while excluding itself from screen capture via macOS content protection. Built as an educational proof-of-concept in real-time systems and macOS platform engineering, with the ethics disclaimer front and center.
 
 **The dual audio pipeline:**
 
@@ -192,7 +192,7 @@ flowchart LR
 - **Solved macOS's missing loopback audio** — macOS has no native `getUserMedia` system-audio capture, so the app combines `desktopCapturer` + `chromeMediaSource: 'desktop'` + Chromium's `MacLoopbackAudioForScreenShare` flag, then strips the mandatory video tracks to isolate a clean system-audio stream
 - **STT-driven utterance endpointing** — instead of naive timers, a question-accumulation state machine buffers interim transcripts and dispatches to the LLM only on Deepgram's `speech_final` signal plus a minimum-length gate — the correct streaming-systems answer to "don't respond mid-sentence"
 - **Provider-agnostic LLM adapter** — one OpenAI SDK client with runtime-resolved `baseURL`/`apiKey` hot-swaps across **7+ backends** (Gemini, NVIDIA NIM, OpenAI, Groq, OpenRouter, and fully local Ollama / LM Studio) with a vision-model fallback chain — zero code changes to switch providers
-- **Four-layer stealth window** — `setContentProtection` (→ `NSWindowSharingNone`, excluded from Zoom/Meet/Teams capture buffers), screen-saver z-level, hidden Dock/Cmd-Tab presence, and visibility across all Spaces and fullscreen apps — plus a **click-through window with a hover-escape**: mouse events pass through the overlay by default and re-engage only when the cursor enters the drag bar
+- **Four-layer stealth window** — `setContentProtection` (→ `NSWindowSharingNone`, which excludes the window from screen-capture buffers used by apps like Zoom/Meet/Teams), screen-saver z-level, hidden Dock/Cmd-Tab presence, and visibility across all Spaces and fullscreen apps — plus a **click-through window with a hover-escape**: mouse events pass through the overlay by default and re-engage only when the cursor enters the drag bar
 - **Measured 78.7% bundle reduction** — replaced `react-markdown` + `react-syntax-highlighter` with a ~25-line regex-based fenced-code renderer, cutting the production JS bundle from **950 kB → 203 kB** (322 kB → 64 kB gzipped) — reproducible from the repo
 - **Security-correct Electron** — `contextIsolation` on, `nodeIntegration` off, and a preload bridge that **allowlists all 13 IPC channels by name**, so zero Node APIs leak into the renderer
 
@@ -231,13 +231,13 @@ flowchart LR
 
 > **Flask 3 · Gemini 2.5 Flash (raw REST, no SDK) · Server-Sent Events · Vanilla JS**
 
-A live web app that turns a rough idea into a **master-level, LLM-optimized prompt in a single pass** — replacing the usual 5–6 rounds of manual prompt iteration — with tokens streaming into the UI in real time. ~950 lines of code, zero frontend frameworks, deployed live.
+A live web app that turns a rough idea into a **structured, LLM-optimized prompt in a single pass** — built to replace the usual rounds of manual prompt iteration — with tokens streaming into the UI in real time. ~950 lines of code, zero frontend frameworks, deployed live.
 
 **🔥 Headline engineering:**
 - **End-to-end token streaming** — Gemini's SSE stream is consumed server-side, re-emitted as clean Server-Sent Events through a Flask streaming proxy, and parsed in the browser by a **custom SSE client** (`fetch` + `ReadableStream` reader + manual event-boundary buffering — built from scratch because `EventSource` can't POST)
 - **The 4-D meta-prompting engine** — a system prompt that frames the model as a prompt-optimization specialist running *Deconstruct → Diagnose → Develop → Deliver*, including a **request-type → technique routing table** (creative → multi-perspective, technical → constraint-based, educational → few-shot, complex → chain-of-thought) and auto-detected BASIC/DETAIL operating modes
 - **Deterministic LLM output via sentinel delimiters** — the optimized prompt must arrive wrapped in `<<<PROMPT>>> … <<<END>>>`, making free-form LLM output reliably machine-parseable and powering one-click "copy only the prompt"; the client parser even tolerates an **unclosed block so the prompt card renders progressively mid-stream**
-- **Production-grade upstream resilience** — 5-attempt exponential backoff that distinguishes 429 rate limits (honoring `Retry-After` headers) from 5xx transients from connection failures, each separately logged; streaming errors delivered *in-band* as SSE events so the connection never just dies
+- **Failure-aware streaming** — errors are delivered *in-band* as SSE events so the connection never just dies, and malformed chunks are skipped without killing the stream; the codebase also includes a retry client with 5-attempt exponential backoff that distinguishes 429 rate limits (honoring `Retry-After` headers) from 5xx transients from connection failures
 - **Key hygiene** — the Gemini key lives server-side only (env + dotenv, hard `RuntimeError` if unset); every model call is proxied so the secret never touches the client
 - **Custom brutalist design system** — CSS custom-property theming, hard offset shadows with a physical button "press" effect, progressive four-card rendering (prompt / improvements / techniques / pro-tip), `aria-live` streaming regions and full keyboard-focus treatment — all in vanilla HTML/CSS/JS
 
@@ -285,14 +285,14 @@ A fully RFC-compliant TOTP authenticator where **the entire cryptographic engine
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/battle--tested-100%2B_concurrent_players-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ran_live-100%2B_participants-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js" />
   <img src="https://img.shields.io/badge/scoring-server--authoritative-success?style=for-the-badge" />
 </p>
 
 > **Next.js 15 (App Router) · React 19 · TypeScript · Prisma 6 · SQLite · Tailwind v4**
 
-A Matrix-themed "hack the firewall" gauntlet built for a live university club event: players race through five security-layer challenges (Caesar cipher, binary decoding, protocol trivia, a final riddle) while a **projected leaderboard updates live** and an organizer drives the whole event from an admin control panel. **Ran in production for 100+ participants with zero downtime.**
+A Matrix-themed "hack the firewall" gauntlet built for a live university club event: players race through five security-layer challenges (Caesar cipher, binary decoding, protocol trivia, a final riddle) while a **projected leaderboard updates live** and an organizer drives the whole event from an admin control panel. **Ran live at a real university event with 100+ participants.**
 
 **🔥 Headline engineering:**
 - **Server-authoritative game logic** — answers are validated and scored exclusively in API route handlers against a server-side answer key that **never ships to the client**; completion timestamps and elapsed times are computed server-side too, so the leaderboard can't be gamed from the browser
@@ -311,11 +311,11 @@ A Matrix-themed "hack the firewall" gauntlet built for a live university club ev
 | | |
 |---|---|
 | 🧮 **~9,500+ lines** | of code across featured projects — C++, Python, TypeScript, JavaScript |
-| 🌐 **2 apps live in production** | [TOTP Generator](https://ubair-s-totp-gen-1.onrender.com) · [AI Prompt Studio](https://ubair-s-ai-prompt-generator.onrender.com) |
+| 🌐 **2 apps deployed & publicly usable** | [TOTP Generator](https://ubair-s-totp-gen-1.onrender.com) · [AI Prompt Studio](https://ubair-s-ai-prompt-generator.onrender.com) |
 | ✅ **6 / 6 RFC test vectors** | official RFC 6238 Appendix B reference vectors passed by from-scratch crypto |
 | 🎞️ **25 FPS** | filtered live video on a microcontroller with no GPU |
 | 📉 **78.7% bundle cut** | 950 kB → 203 kB by replacing two libraries with 25 lines of code |
-| 👥 **100+ concurrent players** | served live at a university event, zero downtime |
+| 👥 **100+ participants** | played HACKED live at a university event |
 | 🔌 **7+ LLM providers** | hot-swappable through one OpenAI-compatible adapter |
 
 </div>
@@ -369,7 +369,7 @@ CGPA: **7.5** (Currently Pursuing)
 **Management Head** — HACKED BY JH
 *2023 – Present*
 - Owned **end-to-end technical delivery** of multiple CTF events and workshops over 2 years — from deployment to live incident response
-- Built the event software myself ([HACKED Game](https://github.com/ubairrr/HACKED-GAME)) *and* ran it live for **100+ participants per event with zero downtime**
+- Built the event software myself ([HACKED Game](https://github.com/ubairrr/HACKED-GAME)) *and* ran it live for **100+ participants per event**
 - Led cross-functional organizing teams across development, logistics & communications
 
 </td>
